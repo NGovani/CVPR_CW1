@@ -12,4 +12,3 @@ points2 = detectKAZEFeatures(grayImg2);
 pairs = matchFeatures(feats1, feats2, "Unique", true, "Method", 'Approximate');
 matchedPoints1 = vpts1(pairs(:,1));
 matchedPoints2 = vpts2(pairs(:,2));
-

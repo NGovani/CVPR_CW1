@@ -1,5 +1,0 @@
-[tform, inlierIdx] = estimateGeometricTransform2D(matchedPoints1, matchedPoints2, 'affin');
-Ir = imwarp(img1, tform);
-figure 
-imshow(Ir); 
-title('Translated Image');
