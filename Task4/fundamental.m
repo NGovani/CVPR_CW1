@@ -1,6 +1,6 @@
-img1 = imread('../Images/DSC_0034.JPG');
+img1 = undistortImage(imread('../Images/DSC_0034.JPG'), cameraParams);
 grayImg1 = rgb2gray(img1);
-img2 = imread('../Images/DSC_0036.JPG');
+img2 = undistortImage(imread('../Images/DSC_0036.JPG'), cameraParams);
 grayImg2 = rgb2gray(img2);
 
 points1 = detectKAZEFeatures(grayImg1);
@@ -13,7 +13,7 @@ pairs = matchFeatures(feats1, feats2, "Unique", true, "Method", 'Approximate');
 matchedPoints1 = vpts1(pairs(:,1));
 matchedPoints2 = vpts2(pairs(:,2));
 
-[F, inlierIdxAuto, status] = estimateFundamentalMatrix(matchedPoints1, matchedPoints2);
+[F, inlierIdxAuto, status] = estimateFundamentalMatrix(matchedPoints1, matchedPoints2, 'NumTrials', 2000, 'Method', 'LMedS');
 
 usedPoints1 = matchedPoints1(inlierIdxAuto);
 usedPoints2 = matchedPoints2(inlierIdxAuto);
