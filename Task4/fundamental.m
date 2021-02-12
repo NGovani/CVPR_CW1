@@ -3,8 +3,8 @@ grayImg1 = rgb2gray(img1);
 img2 = undistortImage(imread('../Images/DSC_0036.JPG'), cameraParams);
 grayImg2 = rgb2gray(img2);
 
-points1 = detectKAZEFeatures(grayImg1);
-points2 = detectKAZEFeatures(grayImg2);
+points1 = detectORBFeatures(grayImg1);
+points2 = detectORBEFeatures(grayImg2);
 
 [feats1, vpts1] = extractFeatures(grayImg1, points1);
 [feats2, vpts2] = extractFeatures(grayImg2, points2);
