@@ -66,49 +66,43 @@ oll16\\
    \caption{FD Sample Image}
    \label{fd:subfig:2}
    \end{subfigure}
+\newline
+   \begin{subfigure}{0.49\linewidth}
+   \centering
+   \includegraphics[width=0.8\linewidth]{../Images/DSC_0030.JPG}
+   \caption{HG Sample Image}
+   \label{hg:subfig:1}
+   \end{subfigure}
+   \begin{subfigure}{0.49\linewidth}
+   \centering
+   \includegraphics[width=0.8\linewidth]{../Images/DSC_0030.JPG}
+   \caption{HG Sample Image}
+   \label{hg:subfig:2}
+   \end{subfigure}
 \end{center}
-   \caption{T1.a. Caption 
-   (always set in Roman: $B \sin A = A \sin B$) may be included without an
-   ugly clash.}
 \label{fig:1}
 \end{figure}
 
 \section{Correspondence Analysis}
 
-\paragraph{In this task,} we were told to compare two methods of correspondence matching, automatic and manual, with two metrics being asked for: quality and quantity. 
+\paragraph{In this task,} we were told to compare two methods of correspondence matching, automatic and manual, with two metrics being asked for: quality and quantity. From \autoref{correspondence:table}, we can see that the automatic method generates a far higher quantity of correspondences than the manual method. This is due to the automatic detection algorithm attempting to find as many points on interest in the image as possible, whilst in the manual method we identify a few known correspondence points. It would be possible, using the manual method, to have a higher quantity but that would result in the process taking an unreasonable amount of time. 
 
-Each coursework task should have its section in this report. It should include outputs specified in task description e.g. figures or tables, and a discussion of each presented figure or table e.g. the main observations and their explanation. 
+The automatic method finds tens of thousands of points of interest in both images and then during matching stage selects pairs of points in the images that it thinks correspond to each other based on a feature matching algorithm. This results in around 3500 correspondence points being identified by the algorithm. The quality of these correspondences was measured by estimating a projective transformation matrix using all the correspondences found by a method and then applying that transformation to each correspondence pair, measuring the error (euclidean distance) between the transformed point and the actual key point in the second image. So, if $\mathbf{a}_i, \mathbf{b}_i$ are a pair of correspondences, i.e $\mathbf{a}$ is a point in image 1 and $\mathbf{b}$ is a point in image 2 that correspond to the same point in 3D space, and there is a projective transformation matrix $\mathbf{H}$ which is derived from set $\mathbf{S} = \{(\mathbf{a}_1, \mathbf{b}_1), (\mathbf{a}_2, \mathbf{b}_2), (\mathbf{a}_3, \mathbf{b}_3) \dots\} $. Then the error for a correspondence pair, $\mathbf{E}_i$, is equal to $||\mathbf{Ha_i} - \mathbf{b_i}|| $ given that $ s = (\mathbf{a_i}, \mathbf{b_i}) $ and $ s \in \mathbf{S}$ and the set $\mathbf{E}$ contains all errors.
 
-%-------------------------------------------------------------------------
- Table~\ref{table:1}, {\ Figures, graphs, and photographs/} 
-All graphics should be centred.  Please ensure that any point you wish to
-make is resolvable in a printed copy of the paper.  Resize fonts in figures
-to match the font in the body text, and choose line widths which render
-effectively in print. 
-
+As can be seen in \autoref{correspondence:table} the points in the manual method have about equal error, whereas the automatic method has many accurate correspondences and a small amount which are extremely erroneous. The sheer amount of points identified by the automatic does then allow it to create a more accurate transform. It should also be noted that during the estimation of the transform, outliers are removed and large percentage of the correspondences found by the automatic method were deemed outliers.
 
 
 \begin{table}[]
-   \begin{tabular}{c|l|lll}
-   \multirow{2}{*}{Method} & \multirow{2}{*}{Quantity} & \multicolumn{3}{c}{Quality}                                    \\ \cline{3-5} 
-                           &                           & \multicolumn{1}{l|}{Mean} & \multicolumn{1}{l|}{Median} & Skew \\ \hline
-   Manual                  & tmp                       & \multicolumn{1}{l|}{tmp}  & \multicolumn{1}{l|}{tmp}    & tmp  \\
-   Automatic (KAZE)        & tmp                       & \multicolumn{1}{l|}{tmp}  & \multicolumn{1}{l|}{tmp}    & tmp 
-   \end{tabular}
-   \medbreak
-   \caption{T1.2 Results of.... }
-   \label{table:1}
+   \begin{tabular}{c|l|ll}
+   \multirow{2}{*}{Method} & \multirow{2}{*}{Quantity} & \multicolumn{2}{c}{Quality/ Error(px)}        \\ \cline{3-4} 
+                           &                           & \multicolumn{1}{l|}{Mean} & Median \\ \hline
+   Manual                  & 48                       & \multicolumn{1}{l|}{88.02}  & 74.60    \\
+   Automatic (KAZE)        & 3495                       & \multicolumn{1}{l|}{273.77}  & 4.23   
+\end{tabular}
+\caption{Quality \& quantity of key point correspondences}
+\label{correspondence:table}
 \end{table}
 
-When placing figures in \LaTeX, it's almost always best to use
-\verb+\includegraphics+, and to specify the  figure width as a multiple of
-the line width as in the example below
-{\small\begin{verbatim}
-   \usepackage[dvips]{graphicx} ...
-   \includegraphics[width=0.8\linewidth]
-                   {myfile.eps}
-\end{verbatim}
-}
 
 \section{Task title}
 

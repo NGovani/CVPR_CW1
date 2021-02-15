@@ -1,3 +1,3 @@
 figure
-imshow(imread('PNGs/DSC_0019.png'))
+imshow(imread('../Images/DSC_0067.JPG'))
 [x2,y2] = getpts;

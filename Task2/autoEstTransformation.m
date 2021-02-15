@@ -22,7 +22,9 @@ transformedPointsAuto = transformPointsForward(tformAuto, matchedPoints1.Locatio
 transformedPointsAutoUsed = transformPointsForward(tformAuto, usedPoints1.Location);
 
 [meanErrAuto, medianErrAuto, varianceAuto, skewAuto, histAuto] = pointsError(transformedPointsAuto, matchedPoints2.Location)
-[meanErrAutoUsed, medianErrAutoUsed, varianceAutoUsed, skewAutoUsed, histAutoUsed] = pointsError(transformedPointsAutoUsed, usedPoints2.Location)
+[meanErrAutoUsed, medianErrAutoUsed, varianceAutoUsed, skewAutoUsed, histAutoUsed] = pointsError(transformedPointsAutoUsed, usedPoints2.Location);
 
+figure
 showMatchedFeatures(img1, img2, matchedPoints1.Location, matchedPoints2.Location)
+figure
 showMatchedFeatures(img1, img2, usedPoints1.Location, usedPoints2.Location)
