@@ -1,0 +1,148 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{icl_eee_cw}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+%\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{CVPR CW 1}
+
+\author{Naim Govani\\
+ng2571\\
+01371045\\
+\and
+Olly Larkin\\
+oll16\\
+01239375\\
+}
+%% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+
+\maketitle
+%\thispagestyle{empty}
+%\vspace{-5cm}
+
+%%%%%%%%% BODY TEXT
+\section{Image Collection}
+
+\paragraph{Task 1} We were instructed to capture to sets of images. The subject of both sets was an object placed in a 3D calibration grid and the difference between the two sets was the type of transformation between the images in said set. The first set \textbf{FD}, has images which horizontally pivoted around the grid, whilst the second set \textbf{HG}, contained images taken from the same position but with varying zoom and rotation. See Appendix \ref{apx:fd} and Appendix \ref{apx:hg} for the \textbf{FD} and \textbf{HG} sets respectively.
+
+\begin{figure}[ht]
+\begin{center}
+   \begin{subfigure}{0.49\linewidth}
+   \centering
+   \includegraphics[width=0.8\linewidth]{../Images/DSC_0030.JPG}
+   \caption{FD Sample Image}
+   \label{fd:subfig:1}
+   \end{subfigure}
+   \begin{subfigure}{0.49\linewidth}
+   \centering
+   \includegraphics[width=0.8\linewidth]{../Images/DSC_0030.JPG}
+   \caption{FD Sample Image}
+   \label{fd:subfig:2}
+   \end{subfigure}
+\end{center}
+   \caption{T1.a. Caption 
+   (always set in Roman: $B \sin A = A \sin B$) may be included without an
+   ugly clash.}
+\label{fig:1}
+\end{figure}
+
+\section{Correspondence Analysis}
+
+\paragraph{In this task,} we were told to compare two methods of correspondence matching, automatic and manual, with two metrics being asked for: quality and quantity. 
+
+Each coursework task should have its section in this report. It should include outputs specified in task description e.g. figures or tables, and a discussion of each presented figure or table e.g. the main observations and their explanation. 
+
+%-------------------------------------------------------------------------
+ Table~\ref{table:1}, {\ Figures, graphs, and photographs/} 
+All graphics should be centred.  Please ensure that any point you wish to
+make is resolvable in a printed copy of the paper.  Resize fonts in figures
+to match the font in the body text, and choose line widths which render
+effectively in print. 
+
+
+
+\begin{table}[]
+   \begin{tabular}{c|l|lll}
+   \multirow{2}{*}{Method} & \multirow{2}{*}{Quantity} & \multicolumn{3}{c}{Quality}                                    \\ \cline{3-5} 
+                           &                           & \multicolumn{1}{l|}{Mean} & \multicolumn{1}{l|}{Median} & Skew \\ \hline
+   Manual                  & tmp                       & \multicolumn{1}{l|}{tmp}  & \multicolumn{1}{l|}{tmp}    & tmp  \\
+   Automatic (KAZE)        & tmp                       & \multicolumn{1}{l|}{tmp}  & \multicolumn{1}{l|}{tmp}    & tmp 
+   \end{tabular}
+   \medbreak
+   \caption{T1.2 Results of.... }
+   \label{table:1}
+\end{table}
+
+When placing figures in \LaTeX, it's almost always best to use
+\verb+\includegraphics+, and to specify the  figure width as a multiple of
+the line width as in the example below
+{\small\begin{verbatim}
+   \usepackage[dvips]{graphicx} ...
+   \includegraphics[width=0.8\linewidth]
+                   {myfile.eps}
+\end{verbatim}
+}
+
+\section{Task title}
+
+\paragraph{Task part} Figure~\ref{fig:2}... Ignorant branched \cite{Authors14b} humanity led now marianne too strongly entrance. Rose to shew bore no ye of paid rent form. Old design are dinner better nearer silent excuse. She which are maids boy sense her shade. Considered reasonable we affronting on expression in. So cordial anxious mr delight. Shot his has must wish from sell nay. Remark fat set why are sudden depend change entire wanted. Performed remainder attending led fat residence far. Sussex result matter any end see. It speedily me addition weddings vicinity in pleasure. Happiness commanded an conveying breakfast in. Regard her say warmly elinor. Him these are visit front end for seven walls. Money eat scale now ask law learn. Side its they just any upon see last. He prepared no shutters perceive do greatest. Ye at unpleasant solicitude in companions interested. 
+
+
+
+\begin{figure}[h]
+\begin{center}
+\fbox{\rule{0pt}{1.2in} \rule{0.99\linewidth}{0pt}}
+   %\includegraphics[width=0.8\linewidth]{egfigure.eps}
+\end{center}
+   \caption{T2.1 .... }
+\label{fig:2}
+\end{figure}
+
+\paragraph{Task part}
+Ferrars all spirits his imagine effects amongst neither. It bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do. Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better.
+
+\section{Conclusions}
+
+Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage mr be. Hold do at tore in park feet near my case. Invitation at understood occasional sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors. 
+
+\clearpage
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+\section{Appendix}
+\subsection{FD Images}
+\label{apx:fd}
+\subsection{HG Images}
+\label{apx:hg}
+
+\end{document}
